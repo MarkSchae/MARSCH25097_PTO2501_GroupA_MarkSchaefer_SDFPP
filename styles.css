@@ -1,9 +1,21 @@
+/* Reset default margins, padding, and box-sizing to ensure consistent layout across browsers (includes borders, padding, etc in the width calculations) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}  
+
 .page-grid-container {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: 1fr;
-    background-color: gray;
-    gap: 1rem;
+    background-image: url(images/whole-page-background-img.png);
+    background-size: cover;
+    gap: 44px;
+    padding-left: 59px;
+    padding-right: 59px;
 }
 
 header {
@@ -12,13 +24,45 @@ header {
 
 .profile-grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 144px auto;
     grid-template-rows: auto;
-    gap: 1rem;
+    gap: 10px;
+    padding-top: 63px;
+    width: 1321.7901611328125px;
+    justify-self: center;
 }
 
-.profile-bio-flex-container, img {
-    background-color: white;
+.profile-bio-flex-container {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 3px #DADADA;
+    width: 994.6890869140625px;
+}
+
+.profile-image {
+    aspect-ratio: 1 / 1;
+    width: 144px;
+    border-radius: 24px;
+}
+
+.profile-name-heading {
+    font-size: 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #000;
+}
+
+.profile-bio {
+    font-size: 16px;
+    font-weight: normal;
+    color: #4A4A4A;
+    line-height: 24px;
+    max-width: 520px;
+    margin: 0px;
 }
 
 .proficiency-skills-graph-grid-container {
@@ -28,15 +72,64 @@ header {
     gap: 1rem;
 }
 
+.skills-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    flex-wrap: wrap;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px #DADADA;
+}
+
+.nested-skills-grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-pills {
+    background-color: #ECF4F1;
+    padding: 8px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    align-self: center;
+    color: #000;
+    letter-spacing: 2px;
+}
+
 .proficiency-bars-grid-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    background-color: white;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px #DADADA;
+}
+
+.bars {
+    height: 6px;
+    border-radius: 3px;
+    background-color: #396B5E;
+}
+
+.javascript-bar {
+    width: 30%;
 }
 
 .proficiency-bars-levels-container {
     display: flex;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    text-align: left;
 }
 
 .languages-grid-container {
@@ -60,11 +153,4 @@ header {
 
 .html-css-bar {
     grid-area: html-css-bar;
-}
-
-.skills-grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    background-color: white;
 }
