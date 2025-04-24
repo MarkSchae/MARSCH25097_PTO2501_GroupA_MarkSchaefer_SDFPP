@@ -9,13 +9,12 @@
 
 .page-grid-container {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, auto);
     grid-template-columns: 1fr;
     background-image: url(images/whole-page-background-img.png);
     background-size: cover;
     gap: 44px;
-    padding-left: 59px;
-    padding-right: 59px;
+    padding: 0px 59px;
 }
 
 header {
@@ -24,30 +23,32 @@ header {
 
 .profile-grid-container {
     display: grid;
-    grid-template-columns: 144px auto;
+    grid-template-columns: 300px auto;
     grid-template-rows: auto;
     gap: 10px;
+    width: 1322px;
     padding-top: 63px;
-    width: 1321.7901611328125px;
-    justify-self: center;
+    border-radius: 29px;
 }
 
 .profile-bio-flex-container {
     background-color: #FFFFFF;
     padding: 24px;
-    border-radius: 12px;
+    border-radius: 29px;
     box-shadow: 0 2px 3px #DADADA;
-    width: 994.6890869140625px;
+    width: 995px;
+    padding: 59px 69px;
+    height: 300px;
 }
 
 .profile-image {
     aspect-ratio: 1 / 1;
-    width: 144px;
-    border-radius: 24px;
+    width: 300px;
+    border-radius: 29px;
 }
 
 .profile-name-heading {
-    font-size: 22px;
+    font-size: 36px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     margin: 0;
@@ -57,11 +58,10 @@ header {
 }
 
 .profile-bio {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: normal;
     color: #4A4A4A;
     line-height: 24px;
-    max-width: 520px;
     margin: 0px;
 }
 
@@ -69,7 +69,8 @@ header {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    width: 1322px;
+    height: 428px;
 }
 
 .skills-grid-container {
@@ -78,27 +79,36 @@ header {
     grid-template-rows: repeat(2, auto);
     flex-wrap: wrap;
     background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 28px;
+    border-radius: 29px;
     box-shadow: 0 2px 2px #DADADA;
+    width: 706px;
+    height: 429px;
+}
+
+.skills-heading {
+    font-size: 34px;
+    color: #000000;
 }
 
 .nested-skills-grid-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 19px;
+    width: 673px;
+    height: 280px;
 }
 
 .skills-pills {
     background-color: #ECF4F1;
-    padding: 8px 14px;
-    border-radius: 6px;
+    padding: 10px 24px;
+    border-radius: 97px;
     display: inline-block;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 24px;
     align-self: center;
-    color: #000;
+    color: #000000;
     letter-spacing: 2px;
 }
 
@@ -108,28 +118,37 @@ header {
     grid-template-rows: repeat(3, auto);
     background-color: #FFFFFF;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 29px;
     box-shadow: 0 2px 2px #DADADA;
+    width: 564px;
+    height: 428px;
+    padding: 41px 28px;
+}
+
+.proficiency-bars-heading {
+    color: #000000;
+    font-size: 34px;
 }
 
 .bars {
-    height: 6px;
-    border-radius: 3px;
+    height: 27px;
+    border-radius: 7px;
     background-color: #396B5E;
 }
 
-.javascript-bar {
+.javascript-bar, .html-css-bar {
     width: 30%;
 }
 
 .proficiency-bars-levels-container {
     display: flex;
-    gap: 12px;
-    font-size: 14px;
+    padding-left: 160px;
+    gap: 30px;
+    height: 36px;
+    font-size: 24px;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
-    color: #000;
-    text-align: left;
+    color: #000000;
 }
 
 .languages-grid-container {
@@ -137,6 +156,13 @@ header {
     grid-template-areas: 
     "js js-bar"
     "html-css html-css-bar";
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+}
+
+.bar-headings {
+    font-size: 24px;
+    color: #000000;
 }
 
 .javascript-heading {
@@ -153,4 +179,25 @@ header {
 
 .html-css-bar {
     grid-area: html-css-bar;
+}
+
+/* Projects section */
+.projects-grid-container {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, auto);
+    background-color: #FFFFFF;
+    width: 1322px;
+    height: 755px;
+}
+
+.projects-card {
+    width: 272px;
+    height: 581px;
+}
+
+.projects-heading {
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 34px;
 }
