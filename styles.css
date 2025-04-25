@@ -10,14 +10,14 @@
 .page-grid-container {
     display: grid;
     grid-template-rows: repeat(6, auto);
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     background-image: url(images/whole-page-background-img.png);
     background-size: cover;
     gap: 44px;
     padding: 0px 59px;
 }
 
-header {
+header, main, footer {
     display: contents;
 }
 
@@ -117,7 +117,6 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     background-color: #FFFFFF;
-    padding: 20px;
     border-radius: 29px;
     box-shadow: 0 2px 2px #DADADA;
     width: 564px;
@@ -189,15 +188,53 @@ header {
     background-color: #FFFFFF;
     width: 1322px;
     height: 755px;
+    padding: 43px 29px;
+    border-radius: 29px;
+    box-shadow: 0 2px 3px #DADADA;
 }
 
 .projects-card {
+    display: flex;
+    flex-direction: column;
     width: 272px;
     height: 581px;
+    gap: 20px;
+    background-color: #E7F0EC;
+    padding: 21px 19px;
+    border-radius: 29px;
 }
+
+.projects-grid-container .projects-card:nth-of-type(1) {
+    background-color: #4A8B70;
+}  
 
 .projects-heading {
     grid-column: 1 / -1;
     justify-self: center;
     font-size: 34px;
+}
+
+.project-date, .project-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.project-brief, .project-responsibilities, .project-tech {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.projects-card span {
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.project-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.heart-img {
+    width: 27px;
+    height: 23px;
 }
