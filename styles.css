@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
 }  
-
+/* Grid for the entire page so that we can have uniform gaps and padding */
 .page-grid-container {
     display: grid;
     grid-template-rows: repeat(6, auto);
@@ -16,11 +16,12 @@
     gap: 44px;
     padding: 0px 59px;
 }
-
+/* Remove these semantic elements from the layout flow */
 header, main, footer {
     display: contents;
 }
-
+/* Each section will have a certain combination of grid/container and flexbox/cards to achieve the desired layout look */
+/* Profile section */
 .profile-grid-container {
     display: grid;
     grid-template-columns: 300px auto;
@@ -99,7 +100,7 @@ header, main, footer {
     width: 673px;
     height: 280px;
 }
-
+/* Specific layout for the pill shaped containers for the skills */
 .skills-pills {
     background-color: #ECF4F1;
     padding: 10px 24px;
@@ -134,7 +135,7 @@ header, main, footer {
     border-radius: 7px;
     background-color: #396B5E;
 }
-
+/* Change width percentage of each bar based on current experience and compentance with each listed language */
 .javascript-bar, .html-css-bar {
     width: 30%;
 }
@@ -146,10 +147,10 @@ header, main, footer {
     height: 36px;
     font-size: 24px;
     font-weight: bold;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif; /* This font is not working */
     color: #000000;
 }
-
+/* Grid template areas to make this section easier to layout next to each other and to try something different */
 .languages-grid-container {
     display: grid;
     grid-template-areas: 
@@ -158,7 +159,7 @@ header, main, footer {
     grid-template-columns: 150px 1fr;
     gap: 20px;
 }
-
+/* Specific placements of each element based on the placeholder name */
 .bar-headings {
     font-size: 24px;
     color: #000000;
@@ -243,6 +244,8 @@ header, main, footer {
 .tools-education-grid-container {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    width: 1322px;
+    gap: 10px;
 }
 
 .education-grid-container {
@@ -269,22 +272,23 @@ header, main, footer {
     border-radius: 29px;
 }
 
-.education-grid-container .education-card:nth-of-type(1) {
+.education-grid-container .education-card:nth-of-type(1),
+.experience-grid-container .experience-card:nth-of-type(1) {
     background-color: #4A8B70;
     color: #FFFFFF;
 }
 
-.education-heading {
+.education-heading, .experience-grid-heading {
     font-size: 34px;
     font-weight: bold;
 }
 
-.place-of-study {
+.place-of-study, .type-of-work {
     font-size: 24px;
     font-weight: bold;
 }
 
-.education-details-container, .education-ul-container {
+.education-details-container, .education-ul-container, .experience-card-details {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -341,3 +345,29 @@ header, main, footer {
     text-align: center;
     font-weight: 500;
 }
+
+.experience-grid-container {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: auto;
+    width: 1316px;
+    height: 640px;
+    border-radius: 29px;
+    padding: 32px 27px;
+    gap: 10px;
+    background-color: #FFFFFF;
+}
+
+.experience-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    background-color: #E7F0EC;
+    gap: 35px;
+    padding: 19px 25px;
+    width: 1260px;
+    height: 145px;
+    border-radius: 29px;
+    font-size: 19px;
+}
+
