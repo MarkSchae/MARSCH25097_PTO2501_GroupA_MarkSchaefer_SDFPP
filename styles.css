@@ -12,9 +12,10 @@
     grid-template-rows: repeat(6, auto);
     grid-template-columns: auto;
     background-image: url(images/whole-page-background-img.png);
-    background-size: cover;
+    width: 1440px; /* Set to the Figma, leaves some of the desktop view as blank space on anything above 1440px */
     gap: 44px;
-    padding: 0px 59px;
+    padding: 63px 59px;
+    /* Setting the background to cover looks very distorted but not setting it to cover introduces some dividing lines */
 }
 /* Remove these semantic elements from the layout flow */
 header, main, footer {
@@ -28,7 +29,6 @@ header, main, footer {
     grid-template-rows: auto;
     gap: 10px;
     width: 1322px;
-    padding-top: 63px;
     border-radius: 29px;
 }
 
@@ -37,7 +37,6 @@ header, main, footer {
     padding: 24px;
     border-radius: 29px;
     box-shadow: 0 2px 3px #DADADA;
-    width: 995px;
     padding: 59px 69px;
     height: 300px;
 }
@@ -137,8 +136,12 @@ header, main, footer {
     background-color: #396B5E;
 }
 /* Change width percentage of each bar based on current experience and compentance with each listed language */
-.javascript-bar, .html-css-bar {
+.beginner-bar {
     width: 30%;
+}
+
+.intermediate-bar {
+    width: 50%;
 }
 
 .proficiency-bars-levels-container {
@@ -300,7 +303,6 @@ header, main, footer {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: auto;
     background-color: #FFFFFF;
-    width: 300px;
     height: 847px;
     border-radius: 29px;
     gap: 20px;
@@ -337,7 +339,7 @@ header, main, footer {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 153px;
-    padding: 5px 15px;
+    /* Adding padding here made it difficult to align the text properly */
     background-color: #000000;
     color: #FFFFFF;
     font-size: 12px;
@@ -399,11 +401,12 @@ header, main, footer {
     border-radius: 29px;
     width: 1322px;
     height: 158px;
+    padding: 29px;
+    gap: 10px;
 }
 
 .contact-footer-flex-container {
     display: flex;
-    padding: 29px;
     gap: 19px;
 }
 
@@ -412,5 +415,17 @@ header, main, footer {
 }
 
 .contact-footer-details {
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-divider {
+    width: 8px;
+    height: 36px;
+    text-align: center;
     font-size: 24px;
 }
