@@ -429,3 +429,340 @@ a {
     text-align: center;
     font-size: 24px;
 }
+
+/* Media querry for mobile repsonsiveness */
+@media (max-width: 767px) {
+    /* Grid for the entire page so that we can have uniform gaps and padding */
+    .page-grid-container {
+        display: grid;
+        grid-template-rows: repeat(6, auto);
+        grid-template-columns: auto;
+        width: 402px; /* Set to the Figma, leaves some of the desktop view as blank space on anything above 1440px */
+        gap: 10px;
+        padding: 10px 42px;
+        /* Setting the background to cover looks very distorted but not setting it to cover introduces some dividing lines */
+    }
+    /* Each section will have a certain combination of grid/container and flexbox/cards to achieve the desired layout look */
+    /* Profile section */
+    .profile-grid-container {
+        grid-template-columns: 147px auto;
+        grid-template-rows: auto;
+        gap: 10px;
+        width: 320px;
+        border-radius: 12px;
+    }
+
+    .profile-bio-flex-container {
+        border-radius: 12px;
+        padding: 12px;
+        width: 163px;
+        height: 137px;
+    }
+
+    .profile-image {
+        width: 147px;
+        height: 137px;
+        border-radius: 12px;
+    }
+
+    .profile-name-heading {
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 0px;
+    }
+
+    .profile-bio {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .proficiency-skills-graph-grid-container {
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: auto;
+        gap: 10px;
+        width: 318px;
+        height: 364px;
+    }
+
+    .skills-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        padding: 16px;
+        border-radius: 12px;
+        width: 318px;
+        height: 177px;
+    }
+
+    .skills-heading {
+        font-size: 14px;
+    }
+
+    .nested-skills-grid-container {
+        gap: 8px;
+        width: 294px;
+        height: 116px;
+    }
+    /* Specific layout for the pill shaped containers for the skills */
+    .skills-pills {
+        padding: 4px 10px;
+        border-radius: 40px;
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+
+    .proficiency-bars-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        border-radius: 12px;
+        width: 318px;
+        height: 177px;
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .proficiency-bars-heading {
+        font-size: 14px;
+    }
+
+    .bars {
+        height: 11px;
+        border-radius: 3px;
+    }
+    /* Change width percentage of each bar based on current experience and compentance with each listed language */
+    .beginner-bar {
+        width: 30%;
+    }
+
+    .intermediate-bar {
+        width: 50%;
+    }
+
+    .proficiency-bars-levels-container {
+        padding-left: 0px;
+        gap: 30px;
+        height: 15px;
+        font-size: 10px;
+    }
+    /* Grid template areas to make this section easier to layout next to each other and to try something different */
+    .languages-grid-container {
+        grid-template-columns: 59px 1fr;
+        gap: 5px;
+    }
+    /* Specific placements of each element based on the placeholder name */
+    .bar-headings {
+        font-size: 10px;
+    }
+
+    .javascript-heading {
+        grid-area: js;
+    }
+
+    .javascript-bar {
+        grid-area: js-bar;
+    }
+
+    .html-css-heading {
+        grid-area: html-css;
+    }
+
+    .html-css-bar {
+        grid-area: html-css-bar;
+    }
+
+    /* Projects section */
+    .projects-grid-container {
+        grid-template-columns: repeat(2, auto);
+        width: 320px;
+        height: 632px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .projects-card {
+        width: 140px;
+        height: 275px;
+        gap: 15px;
+        padding: 10px;
+        border-radius: 12px;
+    }  
+
+    .projects-heading {
+        font-size: 14px;
+    }
+
+    .project-date, .project-name {
+        font-size: 12px;
+    }
+
+    .project-brief, .project-responsibilities, .project-tech {
+        font-size: 10px;
+    }
+
+    .projects-card span {
+        font-size: 10px;
+    }
+
+    .heart-img {
+        width: 13px;
+        height: 11px;
+    }
+
+    /* Education and tools section */
+    .tools-education-grid-container {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+        width: 320px;
+        height: 634px;
+        gap: 10px;
+    }
+
+    .education-grid-container {
+        width: 320px;
+        height: 461px;
+        border-radius: 10px;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .education-card {
+        gap: 8px;
+        padding: 5px;
+        font-size: 8px;
+        border-radius: 12px;
+    }
+
+    .education-heading, .experience-grid-heading {
+        font-size: 14px;
+    }
+
+    .place-of-study, .type-of-work {
+        font-size: 10px;
+    }
+
+    .education-details-container, .education-ul-container, .experience-card-details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tools-grid-container {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(3, auto);
+        height: 163px;
+        border-radius: 12px;
+        gap: 5px;
+        padding: 12px;
+    }
+
+    .tools-heading {
+        font-size: 12px;
+        grid-column: 1 / -1;
+    }
+
+    .tools-nested-grid-container {
+        gap: 16px;
+        padding: 16px 4px;
+        border-radius: 6px;
+    }
+
+    .tools-nested-grid-container img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .tools-nested-grid-heading {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 59px;
+        color: #FFFFFF;
+        font-size: 5px;
+        width: 35px;
+        height: 14px;
+    }
+
+    /* Experience section */
+    .experience-grid-container {
+        display: grid;
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: auto;
+        width: 1316px;
+        height: 640px;
+        border-radius: 29px;
+        padding: 32px 27px;
+        gap: 10px;
+        background-color: #FFFFFF;
+    }
+
+    .experience-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        background-color: #E7F0EC;
+        gap: 35px;
+        padding: 19px 25px;
+        width: 1260px;
+        height: 145px;
+        border-radius: 29px;
+        font-size: 19px;
+        position: relative;
+    }
+
+    .most-recent {
+        background-color: #D76239;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 123px;
+        height: 33;
+        border-radius: 143px;
+        padding: 5px 0px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .experience-card-list {
+        width: 793px;
+    }
+
+    .contact-footer-grid-container {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: auto;
+        background-color: #D76239;
+        color: #FFFFFF;
+        border-radius: 29px;
+        width: 1322px;
+        height: 158px;
+        padding: 29px;
+        gap: 10px;
+    }
+
+    .contact-footer-flex-container {
+        display: flex;
+        gap: 19px;
+    }
+
+    .contact-footer-heading {
+        font-size: 34px;
+    }
+
+    .contact-footer-details {
+        font-size: 24px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .footer-divider {
+        width: 8px;
+        height: 36px;
+        text-align: center;
+        font-size: 24px;
+    }
+  }
+  
