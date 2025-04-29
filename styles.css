@@ -15,6 +15,7 @@
     width: 1440px; /* Set to the Figma, leaves some of the desktop view as blank space on anything above 1440px */
     gap: 44px;
     padding: 63px 59px;
+    justify-self: center;
     /* Setting the background to cover looks very distorted but not setting it to cover introduces some dividing lines */
 }
 /* Remove these semantic elements from the layout flow */
@@ -287,6 +288,10 @@ header, main, footer {
     font-weight: bold;
 }
 
+.education-date {
+    height: 27px;
+}
+
 .place-of-study, .type-of-work {
     font-size: 24px;
     font-weight: bold;
@@ -430,6 +435,14 @@ a {
     font-size: 24px;
 }
 
+.hide {
+    display: none;
+}
+
+html, body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 /* Media querry for mobile repsonsiveness */
 @media (max-width: 767px) {
     /* Grid for the entire page so that we can have uniform gaps and padding */
@@ -538,7 +551,7 @@ a {
     }
 
     .proficiency-bars-levels-container {
-        padding-left: 0px;
+        padding-left: 59px;
         gap: 30px;
         height: 15px;
         font-size: 10px;
@@ -602,7 +615,7 @@ a {
         font-size: 10px;
     }
 
-    .heart-img {
+    .heart-img, .heart-img img {
         width: 13px;
         height: 11px;
     }
@@ -625,7 +638,7 @@ a {
     }
 
     .education-card {
-        gap: 8px;
+        gap: 20px;
         padding: 5px;
         font-size: 8px;
         border-radius: 12px;
@@ -683,86 +696,91 @@ a {
         height: 14px;
     }
 
+
     /* Experience section */
     .experience-grid-container {
-        display: grid;
-        grid-template-rows: repeat(4, auto);
-        grid-template-columns: auto;
-        width: 1316px;
-        height: 640px;
-        border-radius: 29px;
-        padding: 32px 27px;
-        gap: 10px;
-        background-color: #FFFFFF;
+        width: 319px;
+        height: 487px;
+        border-radius: 12px;
+        padding: 12px; /* I cannot find the padding values for certian containers on the figma img */
     }
 
     .experience-card {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
-        background-color: #E7F0EC;
-        gap: 35px;
-        padding: 19px 25px;
-        width: 1260px;
-        height: 145px;
-        border-radius: 29px;
-        font-size: 19px;
-        position: relative;
+        gap: 20px;
+        row-gap: 8px;
+        padding: 8px;
+        width: 295px;
+        height: 141px;
+        border-radius: 10px;
+        font-size: 8px;
+    }
+
+    .vis {
+        display: none;
+    }
+
+    .hide {
+        display: block;
+    }
+
+    .most-recent-hide {
+        display: none;
+    }
+
+    .experience-grid-container .experience-card:nth-of-type(1) {
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .hide {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
     }
 
     .most-recent {
-        background-color: #D76239;
-        position: absolute;
         right: 10px;
         top: 10px;
-        width: 123px;
-        height: 33;
-        border-radius: 143px;
-        padding: 5px 0px;
-        font-size: 15px;
-        text-align: center;
+        width: 61px;
+        height: 16px;
+        border-radius: 59px;
+        padding: 2px 2px;
+        font-size: 8px;
+        position: static;
+    }
+
+    .experience-date {
+        height: 27px;
     }
 
     .experience-card-list {
-        width: 793px;
+        width: 147px;
     }
 
     .contact-footer-grid-container {
-        display: grid;
-        grid-template-rows: repeat(2, auto);
-        grid-template-columns: auto;
-        background-color: #D76239;
-        color: #FFFFFF;
-        border-radius: 29px;
-        width: 1322px;
-        height: 158px;
-        padding: 29px;
-        gap: 10px;
+        border-radius: 12px;
+        width: 320px;
+        height: 89px;
+        padding: 12px;
+        gap: 10px; /* Cannot find this on the figma img, I think because the figma is using absolute positioning instead of padding */
     }
 
     .contact-footer-flex-container {
         display: flex;
-        gap: 19px;
+        gap: 2px;
     }
 
     .contact-footer-heading {
-        font-size: 34px;
+        font-size: 14px;
     }
 
     .contact-footer-details {
-        font-size: 24px;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
+        font-size: 10px;
     }
 
     .footer-divider {
-        width: 8px;
-        height: 36px;
-        text-align: center;
-        font-size: 24px;
+        width: 3px;
+        height: 15px;
+        font-size: 10px;
     }
   }
   
