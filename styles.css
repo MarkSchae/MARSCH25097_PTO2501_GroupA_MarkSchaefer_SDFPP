@@ -6,6 +6,8 @@
     margin: 0;
     padding: 0;
 }  
+
+/* I need to add comments where the Figma does not show what I expect and what I did and why */
 /* Grid for the entire page so that we can have uniform gaps and padding */
 .page-grid-container {
     display: grid;
@@ -13,10 +15,12 @@
     grid-template-columns: auto;
     background-image: url(images/whole-page-background-img.png);
     width: 1440px; /* Set to the Figma, leaves some of the desktop view as blank space on anything above 1440px */
-    gap: 44px;
-    padding: 63px 59px;
+    gap: 44px; /* There is no padding for this on the Figma */
+    padding: 63px 59px; /* There is no padding for this on the Figma */
     justify-self: center;
+    border: 1px solid #000000;
     /* Setting the background to cover looks very distorted but not setting it to cover introduces some dividing lines */
+    font-family: 'Poppins';
 }
 /* Remove these semantic elements from the layout flow */
 header, main, footer {
@@ -28,42 +32,47 @@ header, main, footer {
     display: grid;
     grid-template-columns: 300px auto;
     grid-template-rows: auto;
-    gap: 10px;
+    gap: 27px; /* There is no gap for this on the Figma */
     width: 1322px;
     border-radius: 29px;
 }
 
 .profile-bio-flex-container {
+    display: flex; /* I did not really need to do this but the Figma had a 10px gap so I had to make this element a flexbox */
+    flex-direction: column;
     background-color: #FFFFFF;
-    padding: 24px;
     border-radius: 29px;
     box-shadow: 0 2px 3px #DADADA;
     padding: 59px 69px;
+    width: 995px;
     height: 300px;
+    gap: 10px;
 }
 
 .profile-image {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* There is no padding for this on the Figma */
     width: 300px;
     border-radius: 29px;
 }
 
 .profile-name-heading {
     font-size: 36px;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 16px;
+    vertical-align: middle; /* This does not seem to do anything in my layout */
+    font-family: 'Poppins', sans-serif; /* Must add poppins to everything */
+    font-weight: 600;
     text-align: left;
     color: #000;
+    letter-spacing: 0; /* This does not seem to do anything in my layout */
+    line-height: 104%; /* Equal to the 104% in the Figma */
+    /* If I set a width and height here it breaks my layout a bit */
 }
 
 .profile-bio {
     font-size: 22px;
-    font-weight: normal;
-    color: #4A4A4A;
-    line-height: 24px;
-    margin: 0px;
+    font-weight: 400;
+    color: #5C5C5C;
+    line-height: 150%;
+    vertical-align: middle; /* This does not seem to do anything in my layout */
 }
 
 .proficiency-skills-graph-grid-container {
@@ -78,7 +87,6 @@ header, main, footer {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
-    flex-wrap: wrap;
     background-color: #FFFFFF;
     padding: 28px;
     border-radius: 29px;
@@ -90,6 +98,8 @@ header, main, footer {
 .skills-heading {
     font-size: 34px;
     color: #000000;
+    line-height: 150%;
+    height: 51px;
 }
 
 .nested-skills-grid-container {
@@ -106,11 +116,10 @@ header, main, footer {
     padding: 10px 24px;
     border-radius: 97px;
     display: inline-block;
-    font-family: 'Inter', sans-serif;
     font-size: 24px;
     align-self: center;
     color: #000000;
-    letter-spacing: 2px;
+    /* There is a gap property here of 25px which I am not sure about */
 }
 
 .proficiency-bars-grid-container {
@@ -123,12 +132,14 @@ header, main, footer {
     width: 564px;
     height: 428px;
     padding: 41px 28px;
+    gap: 30px;
 }
 
 .proficiency-bars-heading {
     color: #000000;
     font-size: 34px;
     font-weight: bold;
+    line-height: 33px;
 }
 
 .bars {
@@ -152,8 +163,8 @@ header, main, footer {
     height: 36px;
     font-size: 24px;
     font-weight: bold;
-    font-family: 'Inter', sans-serif; /* This font is not working */
     color: #000000;
+    line-height: 150%;
 }
 /* Grid template areas to make this section easier to layout next to each other and to try something different */
 .languages-grid-container {
@@ -163,11 +174,13 @@ header, main, footer {
     "html-css html-css-bar";
     grid-template-columns: 150px 1fr;
     gap: 20px;
+    line-height: 104%; /* Does nothing for my layout, I am using grid gap for the spacing here */
 }
 /* Specific placements of each element based on the placeholder name */
 .bar-headings {
     font-size: 24px;
     color: #000000;
+    line-height: 104%; /* Does nothing for my layout, I am using grid gap for the spacing here */
 }
 
 .javascript-heading {
@@ -192,21 +205,22 @@ header, main, footer {
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(4, auto);
     background-color: #FFFFFF;
-    width: 1322px;
+    width: 1322px; /* This is 1318px on the Figma but that is out of alignment with the other containers */
     height: 755px;
     padding: 43px 29px;
     border-radius: 29px;
     box-shadow: 0 2px 3px #DADADA;
+    gap: 35px;
 }
 
 .projects-card {
     display: flex;
     flex-direction: column;
-    width: 272px;
+    width: 280px;
     height: 581px;
-    gap: 20px;
+    gap: 10px; /* The Figma say gap 154px, It is far too large of a gap */
     background-color: #E7F0EC;
-    padding: 21px 19px;
+    padding: 22px 19px;
     border-radius: 29px;
 }
 
@@ -219,21 +233,25 @@ header, main, footer {
     grid-column: 1 / -1;
     justify-self: center;
     font-size: 34px;
+    line-height: 150%;
 }
 
 .project-date, .project-name {
     font-size: 24px;
     font-weight: bold;
+    line-height: 150%;
 }
 
 .project-brief, .project-responsibilities, .project-tech {
     font-size: 19px;
     font-weight: bold;
+    line-height: 150%;
 }
 
 .projects-card span {
     font-size: 19px;
     font-weight: normal;
+    line-height: 150%;
 }
 
 .project-date {
@@ -258,7 +276,7 @@ header, main, footer {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: auto;
     width: 995px;
-    height: 847px;
+/* height: 847px;  This does not allow for enough text, if the font family was not poppins it would work */
     border-radius: 29px;
     padding: 29px;
     background-color: #FFFFFF;
@@ -275,6 +293,11 @@ header, main, footer {
     font-weight: normal;
     background-color: #E7F0EC;
     border-radius: 29px;
+    line-height: 150%;
+}
+
+.education-details-container, .experience-card-details-desktop-width {
+    width: 300px;
 }
 
 .education-grid-container .education-card:nth-of-type(1),
@@ -286,6 +309,7 @@ header, main, footer {
 .education-heading, .experience-grid-heading {
     font-size: 34px;
     font-weight: bold;
+    line-height: 150%;
 }
 
 .education-date {
@@ -308,7 +332,7 @@ header, main, footer {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: auto;
     background-color: #FFFFFF;
-    height: 847px;
+    /* height: 847px; This height from the Figma breaks my layout */
     border-radius: 29px;
     gap: 20px;
     padding: 46px 62px;
@@ -359,10 +383,10 @@ header, main, footer {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: auto;
     width: 1316px;
-    height: 640px;
+    /* height: 640px; This fixed height from the Figma causes clipping on my layout */
     border-radius: 29px;
     padding: 32px 27px;
-    gap: 10px;
+    gap: 30px;
     background-color: #FFFFFF;
 }
 
@@ -371,13 +395,18 @@ header, main, footer {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     background-color: #E7F0EC;
-    gap: 35px;
+    gap: 35px; /* The gap of 10px on the Figma is not enough */
     padding: 19px 25px;
     width: 1260px;
-    height: 145px;
+    /* height: 145px; This fixed height from the Figma causes clipping on my layout */
     border-radius: 29px;
     font-size: 19px;
     position: relative;
+    line-height: 150%;
+}
+
+.employer {
+    color: #3F3D3D;
 }
 
 .most-recent {
@@ -386,11 +415,12 @@ header, main, footer {
     right: 10px;
     top: 10px;
     width: 123px;
-    height: 33;
+    height: 33px;
     border-radius: 143px;
     padding: 5px 0px;
     font-size: 15px;
     text-align: center;
+    line-height: 155%;
 }
 
 .experience-card-list {
@@ -407,7 +437,7 @@ header, main, footer {
     width: 1322px;
     height: 158px;
     padding: 29px;
-    gap: 10px;
+    gap: 10px; /* This is not in the Figma, I also do not need to use Justify: space-between for the layout to look like the Figma layout */
 }
 
 .contact-footer-flex-container {
@@ -417,10 +447,12 @@ header, main, footer {
 
 .contact-footer-heading {
     font-size: 34px;
+    line-height: 150%;
 }
 
 .contact-footer-details {
     font-size: 24px;
+    line-height: 150%;
 }
 
 a {
@@ -433,9 +465,10 @@ a {
     height: 36px;
     text-align: center;
     font-size: 24px;
+    line-height: 150%;
 }
 
-.hide {
+.hidden-date-most-recent {
     display: none;
 }
 
@@ -464,17 +497,17 @@ html, body {
         width: 320px;
         border-radius: 12px;
     }
-
+    /* The img and bio looks different to the Figma as the px values did not allow for enough space */
     .profile-bio-flex-container {
         border-radius: 12px;
         padding: 12px;
         width: 163px;
-        height: 137px;
+        height: 200px; /* The height given by the Figma does not allow for enough space */
     }
 
     .profile-image {
         width: 147px;
-        height: 137px;
+        height: 200px; /* The height given by the Figma does not allow for enough space */
         border-radius: 12px;
     }
 
@@ -486,7 +519,6 @@ html, body {
 
     .profile-bio {
         font-size: 10px;
-        line-height: 15px;
     }
 
     .proficiency-skills-graph-grid-container {
@@ -504,10 +536,12 @@ html, body {
         border-radius: 12px;
         width: 318px;
         height: 177px;
+        gap: 16px;
     }
 
     .skills-heading {
         font-size: 14px;
+        height: 15px;
     }
 
     .nested-skills-grid-container {
@@ -559,7 +593,7 @@ html, body {
     /* Grid template areas to make this section easier to layout next to each other and to try something different */
     .languages-grid-container {
         grid-template-columns: 59px 1fr;
-        gap: 5px;
+        gap: 5px; /* The gaps on the Figma for this section are too large for my layout setup (17px gap) */
     }
     /* Specific placements of each element based on the placeholder name */
     .bar-headings {
@@ -586,14 +620,15 @@ html, body {
     .projects-grid-container {
         grid-template-columns: repeat(2, auto);
         width: 320px;
-        height: 632px;
+        height: 800px; /* The 632px height from the Figma was not enough for my layout */
         padding: 12px;
         border-radius: 12px;
+        gap: 15px; /* I found no gap for this section in the mobile screen of the Figma */
     }
 
     .projects-card {
         width: 140px;
-        height: 275px;
+        height: auto; /* The height of 275px from the Figma was not enough for my layout */
         gap: 15px;
         padding: 10px;
         border-radius: 12px;
@@ -625,23 +660,27 @@ html, body {
         grid-template-columns: auto;
         grid-template-rows: repeat(2, auto);
         width: 320px;
-        height: 634px;
+        height: 690px; /* The height of 634px given by the Figma was not enough space for my content */
         gap: 10px;
     }
 
     .education-grid-container {
         width: 320px;
-        height: 461px;
+        height: auto;/* height: 461px; The height of 461px from the Figma is not enough space for my content text */
         border-radius: 10px;
         padding: 8px;
         gap: 8px;
     }
 
     .education-card {
-        gap: 20px;
-        padding: 5px;
+        gap: 8px;
+        padding: 8px;
         font-size: 8px;
-        border-radius: 12px;
+        border-radius: 10px;
+    }
+
+    .education-details-container {
+        width: 124px;
     }
 
     .education-heading, .experience-grid-heading {
@@ -657,7 +696,7 @@ html, body {
         flex-direction: column;
         gap: 5px;
     }
-
+    /* The padding and the gap here I did not find on the Figma */
     .tools-grid-container {
         display: grid;
         grid-template-rows: repeat(2, auto);
@@ -694,32 +733,37 @@ html, body {
         font-size: 5px;
         width: 35px;
         height: 14px;
+        /* Adding padding here like the Figma broke my layout */
     }
-
 
     /* Experience section */
     .experience-grid-container {
         width: 319px;
-        height: 487px;
+        height: 499px; /* The Figma height (487px) of this element plus 12px of gap */
         border-radius: 12px;
         padding: 12px; /* I cannot find the padding values for certian containers on the figma img */
+        gap: 12px; /* My heading is part of this grid so the gap will increase the heigh overall, I could add gap after just the rows other than the first row but that seems unneccesary */
     }
 
     .experience-card {
-        gap: 20px;
+        gap: 8px;
         row-gap: 8px;
         padding: 8px;
         width: 295px;
-        height: 141px;
+        height: auto; /* Setting this to the specific values from Figma did not really work as the content is not the same as in my project */
         border-radius: 10px;
         font-size: 8px;
     }
 
-    .vis {
+    .experience-card-details-mobile-width {
+        width: 124px;
+    }
+
+    .experience-date-hide {
         display: none;
     }
 
-    .hide {
+    .hidden-date-most-recent {
         display: block;
     }
 
@@ -731,7 +775,7 @@ html, body {
         grid-template-rows: repeat(2, auto);
     }
 
-    .hide {
+    .hidden-date-most-recent {
         grid-column: 1 / -1;
         display: flex;
         justify-content: space-between;
@@ -783,4 +827,24 @@ html, body {
         font-size: 10px;
     }
   }
+  
+/* Attempt at using scaling to implement a quicker method of screen responsiveness
+This does come with limitation but I think it is a good method for showing a prototype view
+Since the tablet view responsiveness is not explicitly required, I think this will do nicely for now (changed at a later stage) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    /* Chat GPT gave the calculations
+    scale down the element by 0.5333, increase the width to match the original base size of the element */
+    body {
+        transform: scale(0.5333);
+        transform-origin: top left;
+        width: 187.5%;
+    }
+    /* This is one of the limitations since scaling the element is only virtual so the original width and height is still calculated.
+    this leads to a lot of whitespace after the content, setting a fixed px height that fits the content is the only solution that worked for me */
+    html {
+        height: 1853px;
+    }
+}
+  
+  
   
