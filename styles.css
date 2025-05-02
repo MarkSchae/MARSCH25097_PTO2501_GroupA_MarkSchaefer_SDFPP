@@ -53,6 +53,8 @@ header, main, footer {
     aspect-ratio: 1 / 1; /* There is no padding for this on the Figma */
     width: 300px;
     border-radius: 29px;
+    object-fit: cover;
+    object-position: 0% 25%;
 }
 
 .profile-name-heading {
@@ -61,9 +63,9 @@ header, main, footer {
     font-family: 'Poppins', sans-serif; /* Must add poppins to everything */
     font-weight: 600;
     text-align: left;
-    color: #000;
+    color: #000000;
     letter-spacing: 0; /* This does not seem to do anything in my layout */
-    line-height: 104%; /* Equal to the 104% in the Figma */
+    line-height: 104%;
     /* If I set a width and height here it breaks my layout a bit */
 }
 
@@ -73,6 +75,7 @@ header, main, footer {
     color: #5C5C5C;
     line-height: 150%;
     vertical-align: middle; /* This does not seem to do anything in my layout */
+    overflow: hidden; /* If more content is added then it will break the fixed width layout */
 }
 
 .proficiency-skills-graph-grid-container {
@@ -145,7 +148,7 @@ header, main, footer {
 .bars {
     height: 27px;
     border-radius: 7px;
-    background-color: #396B5E;
+    background-color: #4A8B70;
 }
 /* Change width percentage of each bar based on current experience and compentance with each listed language */
 .beginner-bar {
@@ -268,6 +271,7 @@ header, main, footer {
     display: grid;
     grid-template-columns: repeat(2, auto);
     width: 1322px;
+    height: 847px; /*This does not allow for enough text, some text has been cut off to fit the content into the Figma specifications */
     gap: 10px;
 }
 
@@ -276,7 +280,6 @@ header, main, footer {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: auto;
     width: 995px;
-/* height: 847px;  This does not allow for enough text, if the font family was not poppins it would work */
     border-radius: 29px;
     padding: 29px;
     background-color: #FFFFFF;
@@ -294,12 +297,27 @@ header, main, footer {
     background-color: #E7F0EC;
     border-radius: 29px;
     line-height: 150%;
+    width: 936px;
+    height: 242px;
+    overflow: hidden;
+}
+
+.education-ul-container {
+    overflow: hidden;
+    height: 174px;
+    padding-left: 20px;
+    width: 532px;
 }
 
 .education-details-container, .experience-card-details-desktop-width {
     width: 300px;
 }
+/* Find the 3rd div sibling inside the .experience-card element */
+.experience-card div:nth-of-type(3) {
+    width: 263px;
+}
 
+/* Targets the first type of the element education-card(is a div) then applies the styling to the 1st div amoungst the siblings inside the education-grid-container but only if the class name matches */
 .education-grid-container .education-card:nth-of-type(1),
 .experience-grid-container .experience-card:nth-of-type(1) {
     background-color: #4A8B70;
@@ -383,7 +401,7 @@ header, main, footer {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: auto;
     width: 1316px;
-    /* height: 640px; This fixed height from the Figma causes clipping on my layout */
+    height: 640px; /* This fixed height from the Figma causes clipping on my layout, had to use hidden overflow */
     border-radius: 29px;
     padding: 32px 27px;
     gap: 30px;
@@ -398,7 +416,7 @@ header, main, footer {
     gap: 35px; /* The gap of 10px on the Figma is not enough */
     padding: 19px 25px;
     width: 1260px;
-    /* height: 145px; This fixed height from the Figma causes clipping on my layout */
+    height: 145px; /* This fixed height from the Figma causes clipping on my layout */
     border-radius: 29px;
     font-size: 19px;
     position: relative;
@@ -620,7 +638,7 @@ html, body {
     .projects-grid-container {
         grid-template-columns: repeat(2, auto);
         width: 320px;
-        height: 800px; /* The 632px height from the Figma was not enough for my layout */
+        height: 632px; /* The 632px height from the Figma was not enough for my layout */
         padding: 12px;
         border-radius: 12px;
         gap: 15px; /* I found no gap for this section in the mobile screen of the Figma */
@@ -628,10 +646,11 @@ html, body {
 
     .projects-card {
         width: 140px;
-        height: auto; /* The height of 275px from the Figma was not enough for my layout */
+        height: 275px; /* The height of 275px from the Figma was not enough for my layout */
         gap: 15px;
         padding: 10px;
         border-radius: 12px;
+        overflow: hidden;
     }  
 
     .projects-heading {
@@ -660,13 +679,13 @@ html, body {
         grid-template-columns: auto;
         grid-template-rows: repeat(2, auto);
         width: 320px;
-        height: 690px; /* The height of 634px given by the Figma was not enough space for my content */
+        height: 634px; /* The height of 634px given by the Figma was not enough space for my content */
         gap: 10px;
     }
 
     .education-grid-container {
         width: 320px;
-        height: auto;/* height: 461px; The height of 461px from the Figma is not enough space for my content text */
+        height: 461px;/* height: 461px; The height of 461px from the Figma is not enough space for my content text */
         border-radius: 10px;
         padding: 8px;
         gap: 8px;
@@ -677,10 +696,16 @@ html, body {
         padding: 8px;
         font-size: 8px;
         border-radius: 10px;
+        width: 295px;
+        height: 135px;
     }
 
     .education-details-container {
         width: 124px;
+    }
+
+    .education-ul-container {
+        width: 147px;
     }
 
     .education-heading, .experience-grid-heading {
@@ -742,7 +767,7 @@ html, body {
         height: 499px; /* The Figma height (487px) of this element plus 12px of gap */
         border-radius: 12px;
         padding: 12px; /* I cannot find the padding values for certian containers on the figma img */
-        gap: 12px; /* My heading is part of this grid so the gap will increase the heigh overall, I could add gap after just the rows other than the first row but that seems unneccesary */
+        gap: 12px; /* My heading is part of this grid so the gap will increase the height overall, I could add gap after just the rows other than the first row but that seems unneccesary */
     }
 
     .experience-card {
@@ -755,7 +780,8 @@ html, body {
         font-size: 8px;
     }
 
-    .experience-card-details-mobile-width {
+    .experience-card-details-mobile-width, 
+    .experience-card div:nth-of-type(3) {
         width: 124px;
     }
 
